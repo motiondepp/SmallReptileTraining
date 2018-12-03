@@ -16,6 +16,7 @@ class SpiderMain(object):
 
     def craw(self, root_url):
         count = 1
+        count_limit = 30
         self.urls.add_new_url(root_url)
         while self.urls.has_new_url():
             try:
@@ -37,7 +38,6 @@ class SpiderMain(object):
 
 if __name__ == "__main__":
     #rootUrl = "https://baike.baidu.com/item/%E7%8B%97/85474#hotspotmining"
-    rootUrl = sys.argv[1] # 获取命令行参数
-    count_limit = int(sys.argv[2])
+    rootUrl = "http://baike.baidu.com/item/Android"
     objSpider = SpiderMain()
     objSpider.craw(rootUrl)
